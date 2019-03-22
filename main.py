@@ -63,22 +63,6 @@ if __name__ == "__main__":
     print("Party A parameters")
     for i in paras:
         print(i, " - ", paras[i])
-    # dec = []
-    # for i in message:
-    #     k = random.randint(2, paras['p'] - 2)
-    #     K = pow(paras['public'], k, paras['p'])
-    #     c1 = pow(paras['gen'], k, paras['p'])
-    #     c2 = (K * i) % paras['p']
-
-    #     # print('C1 = ', c1, '\n\n\nC2 = ', c2)
-
-    #     op = pow(c1, paras['private'], paras['p'])
-    #     inv = inverse.modinv(op, paras['p'])
-    #     # print("\n\n\n inv - ", inv)
-    #     dec.append((c2 * inverse.modinv(op, paras['p'])) % paras['p'])
-    #     # print("\n\n\n\n Plain - ", plain)
-    # print(tochar(dec))
-
     enc = Encrypt(message, paras)
     dec = Decrypt(enc, paras)
     print("Decrypted message: ", tochar(dec))
